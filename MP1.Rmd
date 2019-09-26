@@ -4,3 +4,28 @@ author: "Sunni Raleigh and Natalia Iannucci"
 output: html_document
 ---
 
+#Loading the dataset
+```{r}
+d <- read.table("Example 1_3 Health.txt", header = T)
+
+attach(d)
+```
+
+#initial study to observe the nature of the relationship betwee number of hospitals and number of doctors in a city
+
+__Graphical Method:__ Scatter Plot
+```{r}
+plot(NumMDs, NumHospitals, pch = 19, cex = 1.5, col = "blue", main = "scatter plot between number of doctors in a city and the number of hospitals in a city")
+```
+
+The scatter plot shows a      trend.
+
+__Numerical Method:__ Pearson Linear Correlation Coefficient 
+```{r}
+r <- cor(NumMDs, NumHospitals)
+
+r
+```
+r value indicates there is a      linear correlation between the number of doctors in a city and the number of hospitals in a city.
+
+__Based on the scatter plot and the r value, fitting a linear relationship is (IS OR IS NOT??????) reasonable.__
