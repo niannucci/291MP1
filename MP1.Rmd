@@ -1,5 +1,6 @@
 ---
-title: "MP1"
+title: "Mini R Project 1"
+author: "Sunni Raleigh and Natalia Iannucci"
 output: html_document
 ---
 
