@@ -6,7 +6,7 @@ output: html_document
 
 #Loading the dataset
 ```{r}
-d <- read.table("Example 1_3 Health.txt", header = T)
+d <- read.table("Example 1_3 Health.txt", header = T, sep = '\t')
 
 attach(d)
 ```
