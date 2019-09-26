@@ -31,4 +31,11 @@ r
 ```
 The r value  of 0.9084686 indicates there is a strong positive linear correlation between the number of doctors in a city and the number of hospitals in a city.
 
-__Based on the scatter plot and the r value, fitting a linear relationship is reasonable.__
+__Based on the scatter plot and the r value, fitting a linear relationship is reasonable.__ 
+
+
+
+
+#####2. Fit a least square regression line to predict the number of doctors based on the number of hospitals in a city.
+
+#####3. Are you satisfied with the fit of this simple linear model?
