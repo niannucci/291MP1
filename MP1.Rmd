@@ -10,15 +10,18 @@ d <- read.table("Example 1_3 Health.txt", header = T, sep = '\t')
 
 attach(d)
 ```
+ 
+ 
+#####1. Perform an initial study to determine whether a simple linear regression model is reasonable to predict the number of doctors based on the number of hospitals in the city. 
 
-#initial study to observe the nature of the relationship betwee number of hospitals and number of doctors in a city
+#Initial study to observe the nature of the relationship between the number of hospitals and number of doctors in a city
 
 __Graphical Method:__ Scatter Plot
 ```{r}
 plot(NumMDs, NumHospitals, pch = 19, cex = 1.5, col = "blue", main = "scatter plot between number of doctors in a city and the number of hospitals in a city")
 ```
 
-The scatter plot shows a      trend.
+The scatter plot shows a postive linear trend.
 
 __Numerical Method:__ Pearson Linear Correlation Coefficient 
 ```{r}
