@@ -18,7 +18,7 @@ attach(d)
 
 __Graphical Method:__ Scatter Plot
 ```{r}
-plot(NumMDs, NumHospitals, pch = 19, cex = 1.5, col = "blue", main = "scatter plot between number of doctors in a city and the number of hospitals in a city")
+plot(NumMDs, NumHospitals, pch = 19, cex = 1.5, col = "blue", main = "Scatter plot between number of doctors in \na a city and the number of hospitals in a city")
 ```
 
 The scatter plot shows a postive linear trend.
@@ -37,5 +37,21 @@ __Based on the scatter plot and the r value, fitting a linear relationship is re
 
 
 #####2. Fit a least square regression line to predict the number of doctors based on the number of hospitals in a city.
+```{r}
+regMode1 <- lm(NumMDs ~ NumHospitals)
+regMode1
+```
+
+NumMDs = -385.1 + 282*NumHospitals + e
+
+$y_i = -385.1 - 282x_i + e_i$ for $i=1,2,\cdots,83$ where y is the number of doctors in a city, x is the number of hospitals in a city, and e is the random error with the assumptions $e_i \stackrel{iid}\sim N(0, \sigma^2)$.
 
 #####3. Are you satisfied with the fit of this simple linear model?
+```{r}
+# find residuals
+residuals <- resid(regMode1)
+
+# find predicted values
+predValues <- predict(regMode1)
+```
+
