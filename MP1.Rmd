@@ -47,11 +47,48 @@ NumMDs = -385.1 + 282*NumHospitals + e
 $y_i = -385.1 - 282x_i + e_i$ for $i=1,2,\cdots,83$ where y is the number of doctors in a city, x is the number of hospitals in a city, and e is the random error with the assumptions $e_i \stackrel{iid}\sim N(0, \sigma^2)$.
 
 #####3. Are you satisfied with the fit of this simple linear model?
+
+Check linearity and constant variance conditions:
 ```{r}
 # find residuals
 residuals <- resid(regMode1)
+residuals
 
 # find predicted values
 predValues <- predict(regMode1)
-```
+predValues
 
+# plot the predicted values against the residuals
+plot(predValues, residuals)
+abline(0,0, col="red")
+```
+Everywhere in the residual plot, there are negative and positive residuals; however, they are not equally symmetrical about the line e = 0, as the variance increases as the predicted values increase. Therefore, there is a linear patter with non-constant variance. So, the condition of constant variance is NOT met.
+
+Check normality of residuals:
+```{r}
+hist(residuals)
+qqnorm(residuals, pch = 19, col= "blue")
+qqline(residuals, col="red")
+```
+The points in the qq plot only lie approximately on the straight line in the middle part of the graph, between the theoretical quantiles -1 and 1. Therefore, it is unclear if the residuals are normal. Because we can not draw any strong conclusions from this, we will perform a statistical test to determine normality.
+
+Numerical method to determine normality: 
+```{r}
+shapiro.test(residuals)
+```
+$H_0$: the data follows a normal distrubution 
+$H_a$: the data does not follow a normal distrubution 
+alpha level: 0.05
+p-value: 0.0002739
+the p-value is less than 0.05:
+Therefore, reject the null hypothesis at the 5% significant level. So, we can NOT confirm that the data follows a normal distribution.
+
+
+Check zero mean condition: 
+```{r}
+m <- mean(residuals)
+m
+```
+Our regression model holds the codition of zero mean.
+
+While the linearity and zero mean conditions are met, the constant variance and normality of residuals conditions are not met. Therefore, we are NOT satisfied with the fit of this simple linear model.
