@@ -42,12 +42,9 @@ regMode1 <- lm(NumMDs ~ NumHospitals)
 regMode1
 ```
 
-NumMDs = -385.1 + 282*NumHospitals + e
-
 $y_i = -385.1 - 282x_i + e_i$ for $i=1,2,\cdots,83$ where y is the number of doctors in a city, x is the number of hospitals in a city, and e is the random error with the assumptions $e_i \stackrel{iid}\sim N(0, \sigma^2)$.
 
 #####3. Are you satisfied with the fit of this simple linear model?
-
 Check linearity and constant variance conditions:
 ```{r}
 # find residuals
