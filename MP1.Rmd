@@ -4,7 +4,7 @@ author: "Sunni Raleigh and Natalia Iannucci"
 output: html_document
 ---
 
-#Loading the dataset
+###Loading the dataset
 ```{r}
 d <- read.table("Example 1_3 Health.txt", header = T, sep = '\t')
 
@@ -12,9 +12,9 @@ attach(d)
 ```
  
  
-#####1. Perform an initial study to determine whether a simple linear regression model is reasonable to predict the number of doctors based on the number of hospitals in the city. 
+###1. Perform an initial study to determine whether a simple linear regression model is reasonable to predict the number of doctors based on the number of hospitals in the city. 
 
-#Initial study to observe the nature of the relationship between the number of hospitals and number of doctors in a city
+####Initial study to observe the nature of the relationship between the number of hospitals and number of doctors in a city
 
 __Graphical Method:__ Scatter Plot
 ```{r}
@@ -36,7 +36,7 @@ __Based on the scatter plot and the r value, fitting a linear relationship is re
 
 
 
-#####2. Fit a least square regression line to predict the number of doctors based on the number of hospitals in a city.
+###2. Fit a least square regression line to predict the number of doctors based on the number of hospitals in a city.
 ```{r}
 regMode1 <- lm(NumMDs ~ NumHospitals)
 regMode1
@@ -44,7 +44,7 @@ regMode1
 
 $y_i = -385.1 - 282x_i + e_i$ for $i=1,2,\cdots,83$ where y is the number of doctors in a city, x is the number of hospitals in a city, and e is the random error with the assumptions $e_i \stackrel{iid}\sim N(0, \sigma^2)$.
 
-#####3. Are you satisfied with the fit of this simple linear model?
+###3. Are you satisfied with the fit of this simple linear model?
 Check linearity and constant variance conditions:
 ```{r}
 # find residuals
